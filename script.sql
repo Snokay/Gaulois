@@ -61,7 +61,7 @@ HAVING nbCasques >= ALL (
 	GROUP BY pc.id_personnage
 )
 
-Solution View
+--Solution View
 
 SELECT nb.nbCasques FROM nbcasquepris nb
 WHERE nbCasques >= ALL (
@@ -80,8 +80,8 @@ ORDER BY sommeBue DESC
 
 ----Nom de la bataille où le nombre de casques pris a été le plus important.---- pas trouver
 
-SELECT nb.nbCasque, nb.nom_bataille
-FROM nbcasquebataille nb
+--Solution View
+SELECT nb.nbCasque, nb.nom_bataille FROM nbcasquebataille nb
 ORDER BY nb.nbCasque DESC
 LIMIT 1
 
@@ -101,6 +101,7 @@ WHERE i.nom_ingredient = "Poisson frais"
 
 ----Nom du / des lieu(x) possédant le plus d'habitants, en dehors du village gaulois.----
 
+--Solution View
 SELECT nb.nb_personnage, nb.nom_lieu FROM nbhabitantvillage nb
 WHERE nb.nb_personnage >= ALL (
 	SELECT COUNT(p.id_personnage) FROM personnage p
